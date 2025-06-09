@@ -22,12 +22,10 @@ export default function Navbar() {
   return (
     <nav className={styles.navbar}>
       <div className={styles.container}>
-        {/* Logo */}
         <Link href="/">
           <img src="/orbeey.png" alt="Logo Orbeey" className={styles.logo} />
         </Link>
 
-        {/* Menu principal */}
         <ul className={styles.menu}>
           {['Home', 'Sobre', 'Contato'].map((label) => {
             const path = `/${label.toLowerCase() === 'home' ? '' : label.toLowerCase()}`;

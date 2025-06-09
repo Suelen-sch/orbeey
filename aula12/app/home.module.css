@@ -1,0 +1,155 @@
+.main {
+    width: 100%;
+    overflow-x: hidden;
+    background-color: #ffffff;
+  }
+  
+  /* === HERO SECTION === */
+  .heroSection {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5vw;
+    color: white;
+    background-image: url('/Background.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  .textContainer {
+    z-index: 10;
+    max-width: 600px;
+  }
+  
+  .title {
+    font-size: 2.5rem;
+    line-height: 1.2;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+  }
+  
+  @media (min-width: 1024px) {
+    .title {
+      font-size: 3rem;
+    }
+  }
+  
+  .highlight {
+    color: #1ACBF3;
+  }
+  
+  .description {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    margin-bottom: 2rem;
+    color: #e0f7fa;
+  }
+  
+  .button {
+    padding: 0.75rem 1.5rem;
+    background-color: #1ACBF3;
+    color: white;
+    font-weight: 600;
+    border-radius: 999px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .button:hover {
+    background-color: #00bcd4;
+  }
+  
+  /* === FOGUETE === */
+  .fogueteWrapper {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    display: none;
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  @media (min-width: 1024px) {
+    .fogueteWrapper {
+      display: block;
+    }
+  }
+  
+  /* === SERVICES SECTION === */
+  .servicesSection {
+    background-color: #002fb8;
+    padding: 4rem 1.5rem;
+    text-align: center;
+    color: white;
+  }
+  
+  .servicesTitle {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+  }
+  
+  .servicesSubtitle {
+    color: #1ACBF3;
+    margin-bottom: 3rem;
+    font-size: 1rem;
+  }
+  
+  /* === CARDS === */
+  .cardsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  @media (min-width: 768px) {
+    .cardsContainer {
+      flex-direction: row;
+      justify-content: center;
+    }
+  }
+  
+  .card {
+    background-color: white;
+    color: #1a1a1a;
+    border-radius: 1.25rem;
+    padding: 2rem;
+    text-align: left;
+    flex: 1;
+    max-width: 350px;
+    margin: 0 auto;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card h3 {
+    color: #0038B4;
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+  }
+  
+  .card p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    color: #444;
+  }
+  
+  .cardButton {
+    background-color: #0038B4;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 999px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .cardButton:hover {
+    background-color: #002d9b;
+  }
+  

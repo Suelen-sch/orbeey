@@ -8,7 +8,7 @@ import styles from './navbar.module.css';
 export default function Navbar() {
   const pathname = usePathname();
   const [dropdownAberto, setDropdownAberto] = useState(false);
-  const timeoutRef = useRef<NodeJS.Timeout | null>(null); // ref para controlar o delay
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null); 
 
   const abrirDropdown = () => {
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
@@ -16,7 +16,7 @@ export default function Navbar() {
   };
 
   const fecharDropdown = () => {
-    timeoutRef.current = setTimeout(() => setDropdownAberto(false), 200); // espera 200ms
+    timeoutRef.current = setTimeout(() => setDropdownAberto(false), 200); 
   };
 
   return (

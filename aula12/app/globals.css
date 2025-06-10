@@ -22,8 +22,11 @@
   }
 }
 
-body {
+* {
+  font-family: var(--font-sans); 
+}
+
+body{
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-sans); 
 }

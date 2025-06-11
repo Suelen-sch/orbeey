@@ -27,6 +27,10 @@
 }
 
 body{
+  margin-top: 100px;
   background: var(--background);
   color: var(--foreground);
+}
+.exemplo-global-css{
+
 }

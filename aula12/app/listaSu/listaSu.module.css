@@ -1,0 +1,62 @@
+.container {
+  max-width: 1400px;
+  margin: 40px auto;
+  background: #f8fafc;
+  border-radius: 10px;
+  padding: 24px;
+  color: black;
+  box-shadow: 0 2px 8px #0001;
+  
+}
+
+.titulo {
+  color: #2563eb;
+  font-size: 1.3rem;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.lista {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 24px;
+}
+
+.item {
+  background: #e0e7ef;
+  margin-bottom: 8px;
+  padding: 10px 16px;
+  border-radius: 6px;
+  font-size: 1.05rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.preco {
+  color: #059669;
+  font-weight: bold;
+  text-align: center;
+  width: 100px;
+}
+ 
+.marca {
+  font-size: 16px;
+  color: #555;
+  width: 140px;
+}
+
+
+.btn {
+  background-color: #00e189;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #00b374;
+}

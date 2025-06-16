@@ -19,6 +19,7 @@
   list-style: none;
   padding: 0;
   margin-bottom: 24px;
+  display: flex;
 }
 
 .item {
@@ -34,4 +35,7 @@
 .preco {
   color: #059669;
   font-weight: bold;
+}
+.inteiro{
+    width: 100%;
 }

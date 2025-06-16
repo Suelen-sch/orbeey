@@ -1,0 +1,56 @@
+/* dashboard.module.css */
+
+/* ——— layout geral ——— */
+.dashboard {
+    margin-top: 100px;
+    padding: 2rem;
+    font-family: Arial, sans-serif;
+  
+    /* grafite azulado — combina com body preto  */
+    background: #1a1c22;
+    color: #e2e2e2;         /* texto padrão mais suave que #fff */
+  }
+  
+  /* ——— filtro ——— */
+  .filter { margin-top: 1rem; }
+  .filter label { margin-right: .5rem; }
+  
+  /* ——— cards de métricas ——— */
+  .metrics {
+    margin-top: 1rem;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  }
+  
+  .card {
+    background: #252730;     /* cinza bem escuro */
+    border: 1px solid #333;  /* borda sutil */
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,.45);
+    text-align: center;
+  }
+  
+  .card h2 {
+    margin: 0;
+    font-size: 1.6rem;
+    color: #f6f6f6;          /* números um pouco mais claros */
+  }
+  
+  .card span {
+    font-size: .9rem;
+    color: #a0a0a0;          /* legenda atenuada */
+  }
+  
+  /* ——— wrapper do gráfico ——— */
+  .chartWrapper {           /* ⬅ se manteve camelCase no JSX */
+    margin-top: 2rem;
+    height: 260px;
+    /* borda visual opcional para destacar o canvas */
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: .5rem;
+    background: #202226;
+  }
+  

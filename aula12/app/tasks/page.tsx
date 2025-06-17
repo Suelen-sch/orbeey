@@ -8,7 +8,7 @@ export default async function TasksPage() {
   const { data: tasks } = await supabase
     .from('tasks')
     .select('*')
-    .order('created_at', { ascending: false });
+    .order('created_at');
 
   return (
     <section className="p-8 max-w-lg mx-auto" style={{ marginTop: '100px' }}>

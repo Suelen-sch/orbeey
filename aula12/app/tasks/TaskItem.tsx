@@ -28,8 +28,7 @@ export default function TaskItem({ task }: Props) {
     <li
       className={`flex items-center gap-2 p-2 border rounded ${
         optimistic.done ? 'opacity-50 line-through' : ''
-      }`}
-    >
+      }`}>
       <input
         type="checkbox"
         checked={optimistic.done}

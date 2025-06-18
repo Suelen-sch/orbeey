@@ -1,49 +1,32 @@
-'use server'
+'use server';
 
-import { revalidatePath } from 'next/cache';
-import { supabase } from '@/lib/supabase';
+import { revalidatePath } from "next/cache";
+import { supabase } from "@/lib/supabase";
+import bcrypt from "bcryptjs";
 
 export async function cadastrarUsuario(formData: FormData) {
-    const nome = String(formData.get('nome'))
-    const email = String(formData.get('email'))
-    const senha = String(formData.get('senha'))
+    const teste = String(formData.get("nome"));
+    const email = String(formData.get("email"));
+    const senha = String(formData.get("senha"));
+  
+    if (!teste.trim() || !email.trim() || !senha.trim()) return;
 
-    if (!nome.trim() || !email.trim() || !senha.trim()) return
+    // Encripta a senha antes de salvar
+    const senhaHash = await bcrypt.hash(senha, 10);
 
-    const { data, error } = await supabase.auth.signUp({
-        email,
-        password: senha
-    })
-
+    // Insere diretamente na tabela login
+    const { error } = await supabase
+      .from('login')
+      .insert([{
+        name: teste,
+        email: email,
+        password: senhaHash,
+        created_at: new Date().toISOString()
+      }]);
     if (error) {
-        throw new Error('Erro no Cadstro: ${error.message}')
+        throw new Error(`Erro no Cadastro: ${error.message}`);
     }
 
-    if (data?.user?.id) {
-        const { error: insertError } = await supabase
-            .from('usuarios')
-            .insert([{ id: data.user.id, nome }])
-
-        if (insertError) {
-            throw new Error(`Erro ao salvar nome: ${insertError.message}`)
-        }
-    }
-
-
-
-
-
-
+    revalidatePath("/usuarios");
 }
 
-
-
-
-
-
-
-
-
-
-
-        

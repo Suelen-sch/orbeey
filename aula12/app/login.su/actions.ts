@@ -1,32 +1,34 @@
 'use server';
 
-import { revalidatePath } from "next/cache";
 import { supabase } from "@/lib/supabase";
 import bcrypt from "bcryptjs";
+import { redirect } from "next/navigation";
 
-export async function cadastrarUsuario(formData: FormData) {
-    const teste = String(formData.get("nome"));
-    const email = String(formData.get("email"));
-    const senha = String(formData.get("senha"));
-  
-    if (!teste.trim() || !email.trim() || !senha.trim()) return;
+export async function loginUsuario(formData: FormData) {
+  const email = String(formData.get("email"));
+  const senha = String(formData.get("senha"));
 
-    // Encripta a senha antes de salvar
-    const senhaHash = await bcrypt.hash(senha, 10);
+  if (!email.trim() || !senha.trim()) return { ok: false, msg: "Campos obrigatórios" };
 
-    // Insere diretamente na tabela login
-    const { error } = await supabase
-      .from('login')
-      .insert([{
-        name: teste,
-        email: email,
-        password: senhaHash,
-        created_at: new Date().toISOString()
-      }]);
-    if (error) {
-        throw new Error(`Erro no Cadastro: ${error.message}`);
-    }
+  // Busca usuário pelo email
+  const { data, error } = await supabase
+    .from('login')
+    .select('*')
+    .eq('email', email)
+        .single();
+    console.log('Dados do usuário:', data);
 
-    revalidatePath("/usuarios");
+  if (error || !data) {
+    return { ok: false, msg: "Usuário não encontrado" };
+  }
+
+  // Compara senha digitada com hash do banco
+    const senhaConfere = await bcrypt.compare(senha, data.password);
+    console.log('Senha conferida:', senhaConfere);
+  if (!senhaConfere) {
+    return { ok: false, msg: "Senha incorreta" };
+  }
+
+  // Redireciona para a home se o login for bem-sucedido
+  redirect('/');
 }
-

@@ -2,7 +2,7 @@ import styles from './lista.module.css';
 
 export default function Lista() {
     const produtos = ["Banana", "Arroz", "Maçã", "Feijão", "Leite", "Pão", "Café", "Ovo", "Carne", "Queijo"];
-
+    
   const produtosObejto = [
     { nome: "Banana", preco: 3.50 },
     { nome: "Arroz", preco: 12.00 },
@@ -10,7 +10,7 @@ export default function Lista() {
     { nome: "Feijão", preco: 8.90 },
     { nome: "Leite", preco: 4.50 },
     { nome: "Pão", preco: 6.00 },
-    { nome: "Café", preco: 15.00 },
+    { some: "Café", preco: 15.00 },
     { nome: "Ovo", preco: 10.00 },
     { nome: "Carne", preco: 35.00 },
     { nome: "Queijo", preco: 22.00 }
